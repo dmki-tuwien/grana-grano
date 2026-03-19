@@ -1,0 +1,6 @@
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/dmki-tuwien/lpg-normalization-demo.git
+[submodule "backend"]
+	path = backend
+	url = https://github.com/dmki-tuwien/lpg-normalization.git
