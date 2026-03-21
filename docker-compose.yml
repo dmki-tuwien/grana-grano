@@ -12,8 +12,6 @@ services:
     extends:
       file: "backend/docker-compose.yml"
       service: neo4j
-    env_file:
-      - path: ./backend/.env
     networks:
       - app-network
     profiles:
