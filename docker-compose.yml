@@ -3,6 +3,8 @@ services:
     extends:
       file: "frontend/docker-compose.yml"
       service: lpg-normalization-frontend
+    environment:
+      API_ENDPOINT: "/api"
     profiles:
       - grana-grano
     networks:
