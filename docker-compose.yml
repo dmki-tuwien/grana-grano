@@ -32,6 +32,8 @@ services:
       service: restapi
     env_file:
       - path: ./backend/.env
+    environment:
+      URL_PREFIX: "/api"
     networks:
       - app-network
     profiles:
