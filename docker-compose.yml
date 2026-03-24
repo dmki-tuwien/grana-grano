@@ -12,6 +12,8 @@ services:
     extends:
       file: "backend/docker-compose.yml"
       service: neo4j
+    volumes:
+      - ./backend/graphs:/tmp/graphs
     networks:
       - app-network
     profiles:
@@ -25,6 +27,8 @@ services:
       - app-network
     profiles:
       - grana-grano
+    volumes:
+      - ./backend/graphs:/graphs
 
   restapi:
     extends:
