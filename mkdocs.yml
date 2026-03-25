@@ -1,0 +1,18 @@
+site_name: GraNa-GraNo
+theme:
+  name: material
+  palette:
+    primary: red
+  favicon: assets/logo.png
+  logo: assets/logo.png
+  features:
+    - content.tooltips
+markdown_extensions:
+  - abbr
+  - attr_list
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
+
+watch:
+  - includes
