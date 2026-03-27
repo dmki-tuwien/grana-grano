@@ -17,5 +17,5 @@ git clone https://github.com/dmki-tuwien/grana-grano --recurse-submodules
 `
 docker compose --profile grana-grano up --build
 `
-4. GraNa-GraNo is availble on <http://localhost/>! 🎉
+4. GraNa-GraNo is available on <http://localhost/>! 🎉
 
