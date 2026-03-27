@@ -1,7 +1,7 @@
 ---
 title: Getting started
 ---
-# Welcome to GraNa-GraNo <img src="assets/logo.png" style="display: inline; height: 1em">🌾
+# Welcome to GraNa-GraNo <img src="assets/logo.png" style="display: inline; height: 1em">
 
 GraNa-GraNo, is a web-based application that allows the
 visualization and normalization of LPGs. 
@@ -18,4 +18,4 @@ git clone https://github.com/dmki-tuwien/grana-grano --recurse-submodules
 docker compose --profile grana-grano up --build
 `
 4. GraNa-GraNo is availble on <http://localhost/>! 🎉
-    
+
