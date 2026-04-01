@@ -10,6 +10,7 @@ and a backend that performs normalization and connects to graph stores, for whic
 
 ## Configuration
 The following environment variables need to be set in a `.env` file in order to run GraNa-GraNo:
+
 * `USERNAME`: The username, which the Neo4j graph store should use
 * `PASSWORD`: The password, which the Neo4j graph store should use
 
@@ -38,3 +39,8 @@ stored in [Neo4j](https://neo4j.com) and [Memgraph](https://memgraph.com).
 Both graph stores are used in the form of [Docker](https://docker.com) containers. 
 For development purposes, the container running Neo4j binds on [bolt://localhost:7687](bolt://localhost:7687) and the container running Memgraph binds on [bolt://localhost:7688](bolt://localhost:7688).
 
+## Documentation
+
+This documentations is based on [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/). 
+To preview it locally `mkdocs serve` in the root folder of GraNa-GraNo's GitHub repository. 
+To deploy it to GitHub Pages run `mkdocs gh-deploy`.
