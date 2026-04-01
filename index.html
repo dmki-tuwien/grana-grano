@@ -261,6 +261,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#user-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Guide
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -441,6 +452,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#user-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Guide
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -473,6 +495,21 @@ git clone https://github.com/dmki-tuwien/grana-grano --recurse-submodules</code>
 <li>Start the Docker containers using<br>
 <code>docker compose --profile grana-grano up --build</code></li>
 <li>GraNa-GraNo is available on <a href="http://localhost/">http://localhost/</a>! 🎉</li>
+</ol>
+<h2 id="user-guide">User Guide</h2>
+<p>GraNa-GraNo's <abbr title="graphical user interface">GUI</abbr> is divided into a menu bar, that allows to reset the application, and 4 blocks that become visible when using the tool.</p>
+<figure markdown="span">
+  <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="/assets/webapp.png" data-desc-position="bottom"><img alt="The GUI of GraNa-GraNo" src="/assets/webapp.png" width="700"></a>
+  <figcaption>The GraNa-GraNo application (click on image to enlarge)</figcaption>
+</figure>
+
+<p>The following steps need to be taken when using GraNa-GraNo:</p>
+<ol>
+<li>A graph store must be selected. Currently <a href="https://neo4j.com">Neo4j</a> and <a href="https://memgraph.com">Memgraph</a> are supported.</li>
+<li>A <a href="scenarios/">normalization scenario</a> needs to be chosen and loaded.</li>
+<li>After loading <a href="metrics/">metrics</a> are computed before normalization and the provided <a href="dependencies/">dependencies</a> are listed and can be edited. A visualization of the provided graph incl. the dependencies is shown.</li>
+<li>Clicking on "Normalize" normalizes the graph according to the provided dependencies.</li>
+<li>After normalization, again the <a href="metrics/">metrics</a> are computed, the applied transformations and the dependencies after the <a href="transformations/">transformations</a> are shown, and the normalized graph is visualized.</li>
 </ol>
 
 

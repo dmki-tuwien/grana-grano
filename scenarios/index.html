@@ -310,6 +310,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scenarios
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -326,6 +344,86 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#available-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Available scenarios
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Available scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#small-graphs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Small graphs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real-world-graphs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-world graphs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redundancy-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Redundancy patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scenario-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -378,6 +476,75 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#available-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Available scenarios
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Available scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#small-graphs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Small graphs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#real-world-graphs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Real-world graphs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redundancy-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Redundancy patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scenario-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -397,6 +564,17 @@
 
 
 <h1 id="scenarios">Scenarios</h1>
+<p>GraNa-GraNo ships with 15 normalization scenarios that consist each of a graph and a set of <a href="../dependencies/">dependencies</a>.
+The scenarios can be classified as small graphs that are ideal for visualization, as graphs based on real world data, and as graphs that resemble redundancy patterns.</p>
+<h2 id="available-scenarios">Available scenarios</h2>
+<h3 id="small-graphs">Small graphs</h3>
+<p>Name | Visualization | Number of dependencies</p>
+<h3 id="real-world-graphs">Real-world graphs</h3>
+<h3 id="redundancy-patterns">Redundancy patterns</h3>
+<h2 id="scenario-configuration">Scenario configuration</h2>
+<p>Scenarios are configured in the <code>setup.yaml</code> file located in the <a href="../architecture/#backend">backend</a>. 
+In order to be available in GraNa-GraNo, graphs must be provided as Cypher files (YAML key: <code>from_file</code>). Graphs from database dumps are currently not supported.
+The dependencies used in a scenario can be edited</p>
 
 
 
