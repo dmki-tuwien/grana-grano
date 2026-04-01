@@ -1,7 +1,7 @@
 
 # Welcome to GraNa-GraNo <img src="docs/assets/logo.png" style="display: inline; height: 1em">
 
-GraNa-GraNo, is a web-based application that allows the
+GraNa-GraNo is a web-based application that allows the
 visualization and normalization of LPGs. 
 
 ## Getting Started
