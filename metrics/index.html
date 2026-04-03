@@ -283,6 +283,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metrics
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -299,6 +317,47 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#per-graph-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Per-Graph Metrics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#per-dependency-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Per-Dependency Metrics
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -378,6 +437,36 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#per-graph-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Per-Graph Metrics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#per-dependency-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Per-Dependency Metrics
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -397,7 +486,97 @@
 
 
 <h1 id="metrics">Metrics</h1>
-<div class="arithmatex">\[|m|\]</div>
+<p>GraNa-GraNo provides two different types of metrics: per-graph
+and per-dependency metrics. 
+All metrics are computed before and
+after performing normalization and
+are shown as interactive bar plots that provide 
+the exact result values when hovering on them.</p>
+<h2 id="per-graph-metrics">Per-Graph Metrics</h2>
+<p>We defined five metrics that are computed on
+a per-graph basis.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Metric name</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Formula</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NodeCount</td>
+<td>The number of nodes in a graph <span class="arithmatex">\(G\)</span></td>
+<td><span class="arithmatex">\(|N|\)</span></td>
+</tr>
+<tr>
+<td>EdgeCount</td>
+<td>The number of edges in a graph <span class="arithmatex">\(G\)</span></td>
+<td><span class="arithmatex">\(|E|\)</span></td>
+</tr>
+<tr>
+<td>AvgNodePropCount</td>
+<td>The average number of properties over all nodes</td>
+<td><span class="arithmatex">\(\mathsf{avg}\bigl(\bigl\{\bigl|\left\{p\in\mathbf{P}:(n,p) \in \mathsf{dom}(\mathsf{prop})\right\}\bigr|:n\in N\bigr\}\bigr)\)</span></td>
+</tr>
+<tr>
+<td>AvgEdgePropCount</td>
+<td>The average number of properties over all edges</td>
+<td><span class="arithmatex">\(\mathsf{avg}\bigl(\bigl\{\bigl|\left\{p\in\mathbf{P}:(e,p) \in \mathsf{dom}(\mathsf{prop})\right\}\bigr|:e\in E\bigr\}\bigr)\)</span></td>
+</tr>
+<tr>
+<td>DisconnectedSubgraphCount</td>
+<td>The number of disconnected subgraph in a graph <span class="arithmatex">\(G\)</span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>This per-graph metrics rely on the definition of a labeled property graph as
+<span class="arithmatex">\(G=(N,E,\mathsf{lab},\mathsf{src},\mathsf{tgt},\mathsf{prop}))\)</span>, where:</p>
+<ul>
+<li><span class="arithmatex">\(N\)</span> and <span class="arithmatex">\(E\)</span> are sets of nodes and edges,</li>
+</ul>
+<p>and the functions</p>
+<ul>
+<li><span class="arithmatex">\(\mathsf{lab}\)</span> assigns sets of labels to the nodes and edges</li>
+<li><span class="arithmatex">\(\mathsf{src}\)</span> and <span class="arithmatex">\(\mathsf{tgt}\)</span> define the endpoints of the edges</li>
+<li><span class="arithmatex">\(\mathsf{prop}\)</span> assigns
+constant calues to the property keys in nodes and edges.</li>
+</ul>
+<h2 id="per-dependency-metrics">Per-Dependency Metrics</h2>
+<p>For each <a href="../dependencies/">dependency</a> of the form <span class="arithmatex">\(Q :: X \Rightarrow Y\)</span>, three
+metrics are computed:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Metric name</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max- and AvgRedundancyCount</td>
+<td>Inspired by Skavantzos et al.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>, these two metrics compute the maximum respectively the average of the size of groups of redundant values of the properties in <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span>. If no redundancies are present, both metrics have a value of 1.</td>
+</tr>
+<tr>
+<td>Minimality</td>
+<td>Based on Ehrlinger et al.<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>, minimality calculates the ratio between distinct and all pieces of information involving the properties of <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span>. If all pieces of information are redundant, the value of minimality 0; if all are unique, the value of minimality is 1.</td>
+</tr>
+</tbody>
+</table>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Philipp Skavantzos and Sebastian Link. 2025. Third and Boyce-Codd normal
+form for property graphs. VLDB J. 34, 2 (2025), 23.&nbsp;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:2">
+<p>Lisa Ehrlinger and Wolfram Wöß. 2018. A Novel Data Quality Metric for Minimality. In QUAT@WISE (Lecture Notes in Computer Science, Vol. 11235). Springer,
+1–15.&nbsp;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+</ol>
+</div>
 
 
 
@@ -447,7 +626,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.tooltips"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.tooltips", "content.footnote.tooltips"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
