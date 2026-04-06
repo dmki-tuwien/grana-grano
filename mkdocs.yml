@@ -7,17 +7,22 @@ theme:
   logo: assets/logo.png
   features:
     - content.tooltips
+    - content.footnote.tooltips
   icon:
     repo: fontawesome/brands/github
 repo_url: https://github.com/dmki-tuwien/grana-grano
 markdown_extensions:
   - abbr
   - attr_list
+  - footnotes
   - pymdownx.snippets:
       auto_append:
         - includes/abbreviations.md
   - pymdownx.arithmatex:
       generic: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
 
 plugins:
   - glightbox

@@ -4,7 +4,7 @@ GraNa-GraNo is a containerized application that is split into a web-based [front
 and a backend that performs normalization and connects to graph stores, for which currently [Neo4j](https://neo4j.com) and [Memgraph](https://memgraph.com) are supported.
 
 <figure markdown="span">
-  <img alt="The architecture of GraNa-GraNo" src="/assets/architecture.png" width="400"/>
+  <img alt="The architecture of GraNa-GraNo" src="../assets/architecture.png" width="400"/>
   <figcaption>The architecture of GraNa-GraNo</figcaption>
 </figure>
 
