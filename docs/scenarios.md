@@ -51,5 +51,4 @@ The dependencies used in a scenario can be edited by users in GraNa-GraNo withou
 
 [^1]: Philipp Skavantzos and Sebastian Link. 2025. Third and Boyce-Codd normal
 form for property graphs. VLDB J. 34, 2 (2025), 23.
-[^2]: ohannes Schrott, Maxime Jakubowski, and Katja Hose. A Graph-Native Ap-
-proach to Normalization. arXiv:2603.02995 <https://arxiv.org/abs/2603.02995>
+[^2]: Johannes Schrott, Maxime Jakubowski, and Katja Hose. A Graph-Native Approach to Normalization. arXiv:2603.02995 <https://arxiv.org/abs/2603.02995>
