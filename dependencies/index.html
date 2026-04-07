@@ -78,6 +78,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#dependencies" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -248,6 +253,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -368,6 +375,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -387,9 +396,31 @@
   
 
 
-  <h1>Dependencies</h1>
-
-
+<h1 id="dependencies">Dependencies</h1>
+<p>To perform normalization considering nodes and edges, dependencies 
+between (and within) nodes and edges (we refer to them as graph objects) need to be expressed. 
+For this, a novel dependency type, graph-object functional dependencies (<abbr title="graph object funcitonal dependencies">GO-FDs</abbr>), is used <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.
+<abbr title="graph object funcitonal dependencies">GO-FDs</abbr> are similar to FDs from the relational data model except that they are based on graph
+patterns.</p>
+<p>The general structure of a GO-FD is:</p>
+<div class="arithmatex">\[ Q :: X \rightarrow Y \]</div>
+<p>where <span class="arithmatex">\(Q\)</span> is a graph pattern, and <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> are sets of variables that reference nodes, edges, or properties of nodes and edges.</p>
+<p>The graph objects between mentioned in <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> need to be the same or directly connected, as described for the <a href="../transformations/">transformations</a>.</p>
+<p>A simple GO-FD defined over a node <span class="arithmatex">\(x\)</span> with label <span class="arithmatex">\(l\)</span> and property keys <span class="arithmatex">\(k1\)</span> and <span class="arithmatex">\(k2\)</span>, where <span class="arithmatex">\(x.k1\)</span> determines <span class="arithmatex">\(x.k2\)</span> can be defined as:
+<code>(x:l:k1&amp;k2) :: x.k1 =&gt; x.k2</code>.</p>
+<p>The grammar used for parsing <abbr title="graph object funcitonal dependencies">GO-FDs</abbr> in GraNa-GraNo can be found <a href="https://github.com/dmki-tuwien/lpg-normalization/blob/0bfa06523f4012d6034bc92fc742b367bdccee15/gnfd/gnfd.g4">here</a>.</p>
+<p>An example for a more complex GO-FD is
+<code>(c:Cheese)-[a:agesIn:duration&amp;goal]-&gt;(r:AgingRoom)::
+a.duration=&gt;a.goal</code>.
+It contains a graph pattern that describes <em>Cheese</em> that <em>ages</em> in <em>aging rooms</em>, and in the <em>aging in</em> edge, the property <em>duration</em> determines the property <em>goal</em>. </p>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Johannes Schrott, Maxime Jakubowski, and Katja Hose. A Graph-Native Approach to Normalization. arXiv:2603.02995 <a href="https://arxiv.org/abs/2603.02995">https://arxiv.org/abs/2603.02995</a>&nbsp;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+</ol>
+</div>
 
 
 
