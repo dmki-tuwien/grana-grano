@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GraNa-GraNo</title>
+    <script src="at.ac.tuwien.dm.granagrano.wasm.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@blueprintjs/core@6/lib/css/blueprint.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/@blueprintjs/icons@6/lib/css/blueprint-icons.css" rel="stylesheet" />
+</head>
+        <body>
+        <div>Hello from GraalVM Web Image!</div>
+        <div id="root"></div>
+        <input id="num1" type="number"/>
+        <input id="num2" type="number"/>
+
+        <button id="add">Test</button>
+
+        <span id="res"></span>
+
+        </body>
+        <script type="module">
+            import React from "https://esm.unpkg.com/react@18.3.1";
+            import {H1, Button, Spinner } from "https://cdn.jsdelivr.net/npm/@blueprintjs/core@6/+esm";
+    import { createRoot } from "https://esm.unpkg.com/react-dom@18.3.1/client";
+
+    createRoot(document.getElementById("root")).render(
+        React.createElement("H1", { id: "test-id" }, "Hello from React")
+    );
+</script>
+
+
+<script>
+    let addButton = document.getElementById("add");
+    let res = document.getElementById("res")
+
+    GraalVM.run([]).then(() => {
+        addButton.addEventListener("click", () => {
+            const a = parseInt(document.getElementById("num1").value);
+            const b = parseInt(document.getElementById("num2").value);
+
+            // Call the Java add function via WebAssembly
+            const result = globalThis.adder(a, b);
+
+            res.innerText = `Result: ${result}`;
+        });
+    });
+</script>
+
+</html>
