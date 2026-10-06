@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GraNa-GraNo</title>
+    <script src="at.ac.tuwien.dm.granagrano.wasm.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@blueprintjs/core@6/lib/css/blueprint.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/@blueprintjs/icons@6/lib/css/blueprint-icons.css" rel="stylesheet" />
+</head>
+<body>
+<nav id="nav"></nav>
+<div id="root">GraNa-GraNo is being loaded. Depending on you internet connection, this may take a while.</div>
+<input id="num1" type="number"/>
+<input id="num2" type="number"/>
+
+<button id="add">Test</button>
+
+<span id="res"></span>
+
+</body>
+<script type="module">
+    import React from "https://esm.sh/react@18.3.1";
+    import { createRoot } from "https://esm.sh/react-dom@18.3.1/client";
+    import { Alignment, AnchorButton, Button, Icon, Navbar, NavbarDivider, NavbarGroup, NavbarHeading, Tooltip } from "https://esm.sh/@blueprintjs/core@6?deps=react@18.3.1";
+
+
+
+    document.getElementById("root").innerHTML = null;
+    let root = createRoot(document.getElementById("root"));
+
+    function showSpinner() {
+        root.render(React.createElement(Spinner, null, null));
+    }
+
+    export function createNavbar() {
+        let nav = createRoot(document.getElementById("nav"));
+        nav.render(React.createElement(
+            Navbar,
+            { fixedToTop: true },
+            React.createElement(
+                NavbarGroup,
+                { align: Alignment.START },
+                React.createElement("img", {
+                    src: "/assets/logo.png",
+                    alt: "The logo of GraNa-GraNo: A piece of cheese",
+                    height: 23,
+                    style: { marginRight: "0.6em" },
+                }),
+                React.createElement(NavbarHeading, null, "GraNa-GraNo"),
+                React.createElement(NavbarDivider, null),
+                React.createElement(Button, {
+                    className: "bp6-minimal",
+                    icon: "reset",
+                    text: "Restart",
+                    type: "reset",
+                    onClick: () => reset(),
+                }),
+                React.createElement(
+                    Tooltip,
+                    { content: "Restart this application." },
+                    React.createElement(Icon, { icon: "small-info-sign" })
+                )
+            ),
+            React.createElement(
+                NavbarGroup,
+                { align: Alignment.END },
+                React.createElement(AnchorButton, {
+                    className: "bp6-minimal",
+                    endIcon: "share",
+                    text: "Open documentation",
+                    href: "https://dmki-tuwien.github.io/grana-grano",
+                    target: "_blank",
+                })
+            )
+        ));
+    }
+
+    showSpinner();
+
+    // createRoot(document.getElementById("root")).render(
+    //     React.createElement("H1", { id: "test-id" }, "Hello from React")
+    // );
+    let addButton = document.getElementById("add");
+    let res = document.getElementById("res")
+
+    GraalVM.run([]).then(() => {
+        root.render(null);
+        createNavbar();
+
+        addButton.addEventListener("click", () => {
+            const a = parseInt(document.getElementById("num1").value);
+            const b = parseInt(document.getElementById("num2").value);
+
+            // Call the Java add function via WebAssembly
+            const result = globalThis.adder(a, b);
+
+            res.innerText = `Result: ${result}`;
+        });
+    });
+</script>
+
+</html>
