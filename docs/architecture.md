@@ -47,3 +47,4 @@ To configure this, in the settings dialog of GraNa-GraNo's [frontend](#frontend)
 
 This documentations is based on [Zensical](https://zensical.org/). 
 To preview it locally `zensical serve` in the root folder of GraNa-GraNo's GitHub repository.
+To build and publish the documentation run `zensical build` and commit the `site` folder.
