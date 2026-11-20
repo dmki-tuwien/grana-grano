@@ -39,8 +39,11 @@ stored in [Neo4j](https://neo4j.com) and [Memgraph](https://memgraph.com).
 Both graph stores are used in the form of [Docker](https://docker.com) containers. 
 For development purposes, the container running Neo4j binds on [bolt://localhost:7687](bolt://localhost:7687) and the container running Memgraph binds on [bolt://localhost:7688](bolt://localhost:7688).
 
+### LLMs
+For the generation of fresh labels for nodes and edges created during the normalization process an OpenAI-API-compatible LLM can be used.
+To configure this, in the settings dialog of GraNa-GraNo's [frontend](#frontend), the API endpoint URL, API token, and the name of the model to use need to be specified.
+
 ## Documentation
 
-This documentations is based on [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/). 
-To preview it locally `mkdocs serve` in the root folder of GraNa-GraNo's GitHub repository. 
-To deploy it to GitHub Pages run `mkdocs gh-deploy`.
+This documentations is based on [Zensical](https://zensical.org/). 
+To preview it locally `zensical serve` in the root folder of GraNa-GraNo's GitHub repository.

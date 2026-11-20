@@ -1,7 +1,8 @@
 # Scenarios
 
 GraNa-GraNo ships with 15 normalization scenarios that each consist of a graph and a set of [dependencies](dependencies.md).
-The scenarios can be classified as small graphs that are ideal for visualization, as graphs based on real world data, and as graphs that resemble redundancy patterns.
+The scenarios can be classified as small graphs that are ideal for visualization, as graphs based on real world data, and as abstract graphs, 
+which resemble the redundancy patterns of Graph-Native Normalization [^2].
 
 !!! info
     All scenarios _except [London Public Transport](#london-public-transport)_
@@ -13,10 +14,11 @@ The scenarios can be classified as small graphs that are ideal for visualization
 
 #### Grana large and small
 The _Grana_ scenarios contain two small illustrative examples that show graph-native LPG normalization for graphs.
-The graphs contain "cheese" that "ages" for a certain
-duration in "aging rooms" to become a cheese of a particular type,
-e.g., "Grana Padano DOP". The resulting type of cheese (the "goal")
-depends on the "aging duration", which is given in months.<br>The _Grana small_ scenario contains 2 cheeses and 1 aging room,
+The graphs contain batches of cheese that age for a
+certain duration in aging rooms to become a cheese of a particu-
+lar type, e.g., "Grana Padano DOP".The "aging duration", given in
+months, depends on the "type" of cheese to be produced<br>
+The _Grana small_ scenario contains 2 cheeses and 1 aging room.
 The _Grana large_ scenario containes 4 cheeses and 2 aging rooms.
 
 #### No Socks 1, 2, and 3
@@ -41,7 +43,7 @@ As noted above, this is the only dataset the _is not_ distributed out-of-the-box
 
 ### Redundancy Patterns
 
-These 6 scenarios provide a small generic graph for each redundancy pattern, i.e., for each [transformation](transformations.md).
+These 6 scenarios provide a small generic graph for each redundancy pattern, i.e., for each transformation described in [^2].
 
 ## Adding Scenarios
 
@@ -51,4 +53,4 @@ The dependencies used in a scenario can be edited by users in GraNa-GraNo withou
 
 [^1]: Philipp Skavantzos and Sebastian Link. 2025. Third and Boyce-Codd normal
 form for property graphs. VLDB J. 34, 2 (2025), 23.
-[^2]: Johannes Schrott, Maxime Jakubowski, and Katja Hose. A Graph-Native Approach to Normalization. arXiv:2603.02995 <https://arxiv.org/abs/2603.02995>
+[^2]: Johannes Schrott, Maxime Jakubowski, Katja Hose: A Graph-Native Approach to Normalization. EDBT 2027: 61-73 <https://doi.org/10.48786/edbt.2027.06>

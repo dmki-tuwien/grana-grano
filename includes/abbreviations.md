@@ -2,6 +2,8 @@
 *[gFDs]: graph-tailored functional dependencies
 *[GO-FDs]: graph object funcitonal dependencies
 *[GUI]: graphical user interface
+*[LLM]: large language model
+*[LLMs]: large language models
 *[LPG]: labeled property graph
 *[LPGs]: labeled property graphs
 *[HTML]: Hyper Text Markup Language
